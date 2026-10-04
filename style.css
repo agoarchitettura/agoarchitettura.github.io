@@ -1,2 +1,53 @@
-body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;max-width:46rem;margin:0 auto;padding:2rem 1rem;line-height:1.6;color:#1d1d1f;background:#fff}
-h1{font-size:1.6rem}h2{font-size:1.2rem;margin-top:2rem}nav a{margin-right:1rem}footer{margin-top:3rem;font-size:.85rem;color:#555;border-top:1px solid #ddd;padding-top:1rem}
+@font-face{font-family:"Cuprum";src:url("fonts/cuprum.woff") format("woff");font-weight:400 700;font-style:normal;font-display:swap}
+:root{--carta:#f9f9f6;--carta2:#f3f3f0;--inchiostro:#2b2a29;--grafite:#4b5563;--ottone:#a38a67;--linea:#e5e5e0}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--carta);color:var(--inchiostro);font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;font-size:1rem;line-height:1.6}
+a{color:inherit;text-decoration-color:var(--ottone);text-underline-offset:.2em}
+a:hover{color:var(--ottone)}
+:focus-visible{outline:2px solid var(--inchiostro);outline-offset:3px}
+
+/* testata */
+.testata{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.5rem 3rem;border-bottom:1px solid var(--linea)}
+.marchio{display:flex;align-items:center;gap:.9rem;text-decoration:none;font-family:"Cuprum",sans-serif;font-size:1.5rem;letter-spacing:.01em;color:var(--inchiostro)}
+.marchio img{width:44px;height:44px;display:block}
+.testata nav a{margin-left:1.5rem;font-size:.8125rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--grafite)}
+.testata nav a:hover{color:var(--inchiostro)}
+
+/* home */
+.home{min-height:100vh;min-height:100svh;display:flex;flex-direction:column}
+.home main{flex:1;display:flex;flex-direction:column;justify-content:center;padding:4rem 3rem}
+.home .contenuto{max-width:60rem;width:100%;margin:0 auto}
+.motto{font-family:"Cuprum",sans-serif;font-weight:400;font-size:clamp(2rem,4.5vw,3.25rem);line-height:1.1;letter-spacing:0;margin:0 0 1.5rem}
+.filo{width:4rem;height:2px;background:var(--ottone);border:0;margin:0 0 2rem}
+.stato{font-family:"Cuprum",sans-serif;font-size:1.25rem;line-height:1.3;margin:0 0 .75rem}
+.descrizione{max-width:34rem;color:var(--grafite);font-size:1.0625rem;margin:0 0 3rem}
+.contatti{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:1.5rem 3rem;border-top:1px solid var(--linea);padding-top:1.75rem;font-size:.9375rem}
+.contatti dt{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--grafite);margin:0 0 .25rem}
+.contatti dd{margin:0}
+.contatti address{font-style:normal}
+
+/* piede */
+footer{padding:1.5rem 3rem 2rem;border-top:1px solid var(--linea);font-size:.8125rem;line-height:1.7;color:var(--grafite)}
+footer a{text-decoration:none;border-bottom:1px solid var(--linea)}
+footer a:hover{border-bottom-color:var(--ottone)}
+.piede-link{margin-top:.5rem}
+
+/* pagine legali (privacy, termini) */
+body:not(.home){display:block}
+body:not(.home) .testata{margin-bottom:0}
+.documento{max-width:46rem;margin:0 auto;padding:3rem 1.25rem 2rem}
+.documento h1{font-family:"Cuprum",sans-serif;font-weight:500;font-size:2.25rem;line-height:1.2;margin:0 0 1rem}
+.documento h2{font-family:"Cuprum",sans-serif;font-weight:500;font-size:1.5rem;margin:2.25rem 0 .5rem}
+.documento hr{border:0;border-top:1px solid var(--linea);margin:2.5rem 0}
+.documento code{font-size:.9em;background:var(--carta2);padding:.1em .3em}
+
+@media (max-width:640px){
+  .testata{padding:1rem 1.25rem}
+  .marchio{font-size:1.25rem}
+  .marchio img{width:36px;height:36px}
+  .testata nav a{margin-left:1rem}
+  .home main{padding:3rem 1.25rem}
+  .descrizione{margin-bottom:2.5rem}
+  footer{padding:1.25rem 1.25rem 1.75rem}
+}
